@@ -1,0 +1,38 @@
+.header{
+  margin: 10px;
+  display: flex;
+  
+  justify-content: center;
+  
+    &text { 
+      padding: 15px;
+      font-style: normal;
+      font-size: larger;
+      font-weight: bold;
+      border: 2px solid black;
+      border-radius: 10px;
+  }
+}
+.mainText{
+  text-align: center;
+  font-size: x-large;
+  width: 100%;
+  color: rgb(38, 0, 255);
+}
+.containermain{
+    &-mainForm{
+      margin: auto;
+      padding-top: 25px;
+      text-align: center;
+      width: 450px;
+      height: 200px;
+    }
+    &-inputYellow{
+      margin: 5px;   
+      border: 5px solid yellow;
+    }
+    &-inputBlue{
+      margin: 5px;   
+      border: 5px solid blue;
+    }
+} 

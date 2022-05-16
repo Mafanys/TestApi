@@ -1,22 +1,18 @@
-import React, { useEffect, useState } from "react";  
-
-const url = "https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=5";
+import React from "react";  
+import useApiCurs from "../Custom-hook/Custom-hook";
 
 const Header = () => {
-  const [curs, setCurs] = useState([]);
+  
+    const curses = useApiCurs();
 
-  useEffect(()=>{
-    fetch("https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=5")
-      .then((resp) => resp.json())    
-      .then(item => setCurs(item))   
-  }, [])
-
-    console.log(curs);
     return (
-      <header>
-        {curs.map(item => (          
-          <h3>{item.ccy}: {item.buy} </h3>          
-        ))}
+      <header className="header">
+        <div className="headertext">
+          {curses.map(item => (          
+            <span key={item.ccy} >{item.ccy}: {item.buy} </span>          
+          ))}
+        </div>
+        
       </header>
     )
 }
